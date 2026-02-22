@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        
+        /* Royal Wedding Color Palette - Light Mode */
+        --background: 0.98 0.01 30;  /* Soft cream background */
+        --foreground: 0.25 0.08 15;  /* Deep maroon text */
+        
+        --card: 1 0 0;  /* Pure white cards */
+        --card-foreground: 0.25 0.08 15;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.08 15;
+        
+        --primary: 0.25 0.08 15;  /* Maroon primary */
+        --primary-foreground: 0.98 0.01 30;  /* Cream text on maroon */
+        
+        --secondary: 0.95 0.02 40;  /* Soft pink secondary */
+        --secondary-foreground: 0.25 0.08 15;
+        
+        --muted: 0.96 0.01 35;  /* Muted cream */
+        --muted-foreground: 0.45 0.05 20;
+        
+        --accent: 0.75 0.15 60;  /* Gold accent */
+        --accent-foreground: 0.25 0.08 15;
+        
+        --destructive: 0.55 0.22 25;  /* Red for destructive actions */
+        --destructive-foreground: 1 0 0;
+        
+        --border: 0.75 0.15 60 / 30%;  /* Gold border with transparency */
+        --input: 0.75 0.15 60 / 30%;
+        --ring: 0.75 0.15 60;  /* Gold focus ring */
+        
+        --chart-1: 0.25 0.08 15;
+        --chart-2: 0.75 0.15 60;
+        --chart-3: 0.95 0.02 40;
+        --chart-4: 0.98 0.01 30;
+        --chart-5: 0.45 0.05 20;
+        
+        /* Custom wedding colors */
+        --maroon: 0.25 0.08 15;
+        --gold: 0.75 0.15 60;
+        --cream: 0.98 0.01 30;
+        --soft-pink: 0.95 0.02 40;
+    }
+
+    .dark {
+        --background: 0.15 0.05 15;  /* Dark maroon background */
+        --foreground: 0.98 0.01 30;  /* Cream text */
+        
+        --card: 0.20 0.06 15;  /* Slightly lighter maroon for cards */
+        --card-foreground: 0.98 0.01 30;
+        
+        --popover: 0.20 0.06 15;
+        --popover-foreground: 0.98 0.01 30;
+        
+        --primary: 0.75 0.15 60;  /* Gold primary in dark mode */
+        --primary-foreground: 0.15 0.05 15;
+        
+        --secondary: 0.30 0.07 20;  /* Darker secondary */
+        --secondary-foreground: 0.98 0.01 30;
+        
+        --muted: 0.25 0.06 18;
+        --muted-foreground: 0.75 0.05 35;
+        
+        --accent: 0.75 0.15 60;  /* Gold accent */
+        --accent-foreground: 0.15 0.05 15;
+        
+        --destructive: 0.60 0.25 25;
+        --destructive-foreground: 0.98 0.01 30;
+        
+        --border: 0.75 0.15 60 / 20%;
+        --input: 0.75 0.15 60 / 20%;
+        --ring: 0.75 0.15 60;
+        
+        --chart-1: 0.75 0.15 60;
+        --chart-2: 0.95 0.02 40;
+        --chart-3: 0.98 0.01 30;
+        --chart-4: 0.45 0.05 20;
+        --chart-5: 0.25 0.08 15;
+        
+        /* Custom wedding colors for dark mode */
+        --maroon: 0.25 0.08 15;
+        --gold: 0.75 0.15 60;
+        --cream: 0.98 0.01 30;
+        --soft-pink: 0.95 0.02 40;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+    }
+}
+
+@layer utilities {
+    .text-maroon {
+        color: oklch(var(--maroon));
+    }
+    
+    .bg-maroon {
+        background-color: oklch(var(--maroon));
+    }
+    
+    .border-maroon {
+        border-color: oklch(var(--maroon));
+    }
+    
+    .text-gold {
+        color: oklch(var(--gold));
+    }
+    
+    .bg-gold {
+        background-color: oklch(var(--gold));
+    }
+    
+    .border-gold {
+        border-color: oklch(var(--gold));
+    }
+    
+    .text-cream {
+        color: oklch(var(--cream));
+    }
+    
+    .bg-cream {
+        background-color: oklch(var(--cream));
+    }
+    
+    .border-cream {
+        border-color: oklch(var(--cream));
+    }
+    
+    .text-softPink {
+        color: oklch(var(--soft-pink));
+    }
+    
+    .bg-softPink {
+        background-color: oklch(var(--soft-pink));
+    }
+    
+    .border-softPink {
+        border-color: oklch(var(--soft-pink));
+    }
+}

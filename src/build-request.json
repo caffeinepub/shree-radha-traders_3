@@ -1,0 +1,297 @@
+{
+  "kind": "build_request",
+  "title": "Luxurious Indian Wedding Gift Packaging Website for Shree Radha Traders",
+  "projectName": "Shree Radha Traders",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a comprehensive admin authentication system supporting multiple admin logins with secure credential management",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Multiple admin can login to website",
+          "Full admin dashboard access"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Multiple admins can register and log in with unique credentials",
+        "Admin sessions are secure and properly authenticated",
+        "Unauthorized users cannot access admin features"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build an admin dashboard with complete product management capabilities: upload product photos, delete photos, edit product descriptions, add/remove product categories, and update pricing",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Admin can: Upload new product photos, Delete photos, Edit product descriptions, Add new product categories, Update pricing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can upload multiple product photos with preview",
+        "Admin can delete individual product photos",
+        "Admin can edit product descriptions and pricing in real-time",
+        "Admin can create, edit, and delete product categories",
+        "Changes are immediately reflected on the public website"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement admin functionality to edit homepage banners with image upload and replacement capabilities",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Edit homepage banners"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can upload new banner images for the hero section",
+        "Admin can replace existing banners",
+        "Banner changes are immediately visible on the homepage"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create an admin inquiry management system to view, track, and manage customer inquiries submitted through the contact form",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Manage inquiries"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can view all submitted inquiries with timestamp",
+        "Inquiries display customer name, phone number, and message",
+        "Admin can mark inquiries as read or resolved"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Design a hero section with wedding-themed background image, heading 'Premium Wedding Gift Packaging for Grand Celebrations', subheading 'Bulk Orders | Pan India Delivery', and two CTA buttons: 'View Collection' and 'Order on WhatsApp'",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Big banner with wedding-themed background",
+          "Heading: 'Premium Wedding Gift Packaging for Grand Celebrations'",
+          "Subheading: 'Bulk Orders | Pan India Delivery'",
+          "CTA Buttons: 'View Collection', 'Order on WhatsApp'"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section displays a luxurious wedding-themed background",
+        "Heading and subheading are prominently displayed with readable contrast",
+        "'View Collection' button scrolls to product gallery",
+        "'Order on WhatsApp' button opens WhatsApp chat with pre-filled message"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create an About Us section featuring the story of Shree Radha Traders, highlighting their position as a trusted wholesale supplier from Churu, Rajasthan, with emphasis on experience and quality focus",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Story of Shree Radha Traders",
+          "Mention: Trusted wholesale supplier from Churu, Rajasthan",
+          "Experience & quality focus"
+        ]
+      },
+      "acceptanceCriteria": [
+        "About Us section includes compelling copy about Shree Radha Traders",
+        "Section mentions Churu, Rajasthan location",
+        "Content emphasizes trust, experience, and quality"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build a product gallery with categories (Fancy Potlis, Designer Envelopes, Wedding Pouches, Jute Bags, Return Gifts, Corporate Gifting Options) using a grid layout with image zoom functionality",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Categories: Fancy Potlis, Designer Envelopes, Wedding Pouches, Jute Bags, Return Gifts",
+          "Grid layout with zoom feature",
+          "Corporate gifting options"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products are organized into six distinct categories",
+        "Gallery displays products in a responsive grid layout",
+        "Clicking a product image triggers zoom/lightbox view",
+        "Each product shows description and pricing",
+        "Categories can be filtered or navigated separately"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create a 'Why Choose Us' section highlighting four key value propositions: Premium Quality Material, Wholesale Prices, Fast Delivery, and Trusted by Wedding Planners",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Premium Quality Material, Wholesale Prices, Fast Delivery, Trusted by Wedding Planners"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section displays four distinct benefit cards or items",
+        "Each benefit is clearly labeled and visually distinct",
+        "Content reinforces trust and value for bulk buyers"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Implement a comprehensive contact section with click-to-call phone number, WhatsApp direct chat button, Instagram link, inquiry form (Name, Phone, Message fields), and embedded Google Map showing Churu, Rajasthan location",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Mobile number (click to call)",
+          "WhatsApp button (direct chat link)",
+          "Instagram link",
+          "Inquiry form (Name, Phone, Message)",
+          "Google Map location"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Phone number is clickable and initiates call on mobile devices",
+        "WhatsApp button opens direct chat with Shree Radha Traders",
+        "Instagram icon links to company profile",
+        "Inquiry form captures Name, Phone, and Message and submits to backend",
+        "Google Map is embedded showing Churu, Rajasthan",
+        "Form submission is validated and provides user feedback"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Design a footer section with social media icons (WhatsApp, Instagram), quick navigation links, and copyright text '© Shree Radha Traders'",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Social media icons",
+          "Quick links",
+          "Copyright: © Shree Radha Traders"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer displays social media icons with working links",
+        "Quick links navigate to main sections of the website",
+        "Copyright notice is clearly visible"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Add a floating WhatsApp button that remains visible across all pages and opens direct chat with Shree Radha Traders when clicked",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "WhatsApp floating button"
+        ]
+      },
+      "acceptanceCriteria": [
+        "WhatsApp button floats in bottom-right corner on all pages",
+        "Button is always visible while scrolling",
+        "Clicking opens WhatsApp with pre-filled business contact"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Apply a luxurious royal color palette throughout the website using Maroon as primary, Gold as accent, and Cream and Soft Pink as complementary colors to create a traditional yet modern Indian wedding aesthetic",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Use a royal color palette: Maroon, Gold, Cream, Soft Pink",
+          "Design should feel traditional yet modern"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Maroon is used as the primary brand color",
+        "Gold accents are used for highlights and CTAs",
+        "Cream and Soft Pink provide balance and elegance",
+        "Overall design feels cohesive, luxurious, and wedding-appropriate",
+        "Color scheme is consistent across all sections"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Ensure the entire website is fully responsive and optimized for mobile, tablet, and desktop viewing experiences",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Mobile responsive"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Website displays correctly on mobile devices (320px and up)",
+        "Layout adapts smoothly to tablet and desktop screens",
+        "Navigation is touch-friendly on mobile",
+        "All interactive elements are easily accessible on small screens"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use royal color palette: Maroon (primary), Gold (accent), Cream, Soft Pink",
+    "Design must feel traditional yet modern with Indian wedding aesthetic",
+    "WhatsApp integration must use direct chat links, not third-party APIs",
+    "Admin panel must support multiple simultaneous admin users",
+    "All contact links (phone, WhatsApp, Instagram) must use native protocols (tel:, whatsapp:, https:)"
+  ],
+  "nonGoals": [
+    "Payment gateway integration or e-commerce checkout",
+    "Real-time chat functionality beyond WhatsApp links",
+    "Email marketing or newsletter automation",
+    "Customer account creation or login for non-admin users",
+    "Inventory management or stock tracking",
+    "Order fulfillment or shipping integration"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Luxurious Indian wedding-themed hero banner with traditional decorative elements, rich fabrics, and celebration motifs in Maroon, Gold, Cream, and Soft Pink color palette (hero-banner.dim_1920x800.png)",
+      "Elegant fancy embroidered potli bag in maroon and gold with traditional Indian patterns (potli-product.dim_600x600.png)",
+      "Designer shagun envelope with gold embellishments and wedding motifs (shagun-envelope.dim_600x600.png)",
+      "Decorative wedding pouch with traditional Indian embroidery in soft pink and cream (wedding-pouch.dim_600x600.png)",
+      "Natural jute hand bag with elegant handles and minimal decoration (jute-bag.dim_600x600.png)",
+      "Premium quality material icon illustration showing fabric texture in gold (quality-icon.dim_128x128.png)",
+      "Wholesale pricing icon with rupee symbol in maroon (wholesale-icon.dim_128x128.png)",
+      "Fast delivery icon with vehicle or speed motif in gold (delivery-icon.dim_128x128.png)",
+      "Trust badge icon with checkmark or seal in maroon and gold (trust-icon.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

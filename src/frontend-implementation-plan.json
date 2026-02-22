@@ -1,0 +1,341 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Luxurious Indian Wedding Gift Packaging Website for Shree Radha Traders",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create admin authentication UI with login form and role-based access guards",
+      "acceptanceCriteria": [
+        "Multiple admins can register and log in with unique credentials",
+        "Admin sessions are secure and properly authenticated",
+        "Unauthorized users cannot access admin features"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/auth/LoginButton.tsx",
+          "operation": "create",
+          "description": "Create login button component using the authorization component's Internet Identity integration. Include login/logout functionality with proper state management and query cache clearing on logout."
+        },
+        {
+          "path": "frontend/src/components/auth/ProfileSetup.tsx",
+          "operation": "create",
+          "description": "Create user profile setup modal that appears on first login. Use getCallerUserProfile and saveCallerUserProfile from the authorization component to check for existing profile and save new profile with name, email, and phone fields."
+        },
+        {
+          "path": "frontend/src/hooks/useAuth.ts",
+          "operation": "create",
+          "description": "Create authentication hook that wraps the authorization component's useInternetIdentity hook and provides isAuthenticated, isAdmin, userRole, and userProfile states. Use getCallerUserRole and isCallerAdmin backend methods."
+        },
+        {
+          "path": "frontend/src/components/auth/ProtectedRoute.tsx",
+          "operation": "create",
+          "description": "Create protected route wrapper component that checks admin permissions using the authorization component's role-based access control. Redirect unauthorized users to homepage with error message."
+        },
+        {
+          "path": "frontend/src/hooks/useGetCallerUserProfile.ts",
+          "operation": "create",
+          "description": "Create hook for fetching current user profile using authorization component pattern to prevent profile setup modal flash. Return proper loading and fetched states that account for actor availability."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build admin dashboard UI for product management with photo upload, editing, and category management",
+      "acceptanceCriteria": [
+        "Admin can upload multiple product photos with preview",
+        "Admin can delete individual product photos",
+        "Admin can edit product descriptions and pricing in real-time",
+        "Admin can create, edit, and delete product categories",
+        "Changes are immediately reflected on the public website"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "create",
+          "description": "Create main admin dashboard page with tabs/sections for Products, Banners, and Inquiries. Wrap with ProtectedRoute component to ensure admin-only access. Include navigation between sections."
+        },
+        {
+          "path": "frontend/src/components/admin/ProductManager.tsx",
+          "operation": "create",
+          "description": "Create product management component with product list, add/edit/delete actions. Use blob-storage component's ExternalBlob class for image uploads with progress tracking via withUploadProgress. Call addProduct, updateProduct, deleteProduct backend methods and invalidate queries after mutations."
+        },
+        {
+          "path": "frontend/src/components/admin/ProductForm.tsx",
+          "operation": "create",
+          "description": "Create product form for adding/editing products with fields for name, description, category dropdown, price, and image upload. Use blob-storage component's ExternalBlob.fromBytes for image uploads. Include image preview functionality."
+        },
+        {
+          "path": "frontend/src/components/admin/CategoryManager.tsx",
+          "operation": "create",
+          "description": "Create category management section within ProductManager showing existing categories from getCategories backend method. Note: Category add/remove will be handled through product creation/deletion since categories are derived from products."
+        },
+        {
+          "path": "frontend/src/hooks/useProducts.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for product operations: useGetAllProducts, useAddProduct, useUpdateProduct, useDeleteProduct. Use getAllProducts, addProduct, updateProduct, deleteProduct backend methods. Verify blob-storage component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useCategories.ts",
+          "operation": "create",
+          "description": "Create React Query hook for fetching categories using getCategories backend method. Cache results appropriately."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement admin UI for editing homepage banners with image upload and replacement",
+      "acceptanceCriteria": [
+        "Admin can upload new banner images for the hero section",
+        "Admin can replace existing banners",
+        "Banner changes are immediately visible on the homepage"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/admin/BannerManager.tsx",
+          "operation": "create",
+          "description": "Create banner management component within admin dashboard showing all banners with preview. Use blob-storage component's ExternalBlob for image handling and getDirectURL for display. Include add, update, delete actions calling addBanner, updateBanner, deleteBanner backend methods. Verify blob-storage component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/admin/BannerForm.tsx",
+          "operation": "create",
+          "description": "Create banner form for uploading/editing banners with image upload field and optional link field. Use blob-storage component's ExternalBlob.fromBytes with withUploadProgress for upload tracking. Include image preview."
+        },
+        {
+          "path": "frontend/src/hooks/useBanners.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for banner operations: useGetAllBanners, useAddBanner, useUpdateBanner, useDeleteBanner. Use getAllBanners, addBanner, updateBanner, deleteBanner backend methods. Invalidate queries after mutations."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create admin UI for viewing and managing customer inquiries",
+      "acceptanceCriteria": [
+        "Admin can view all submitted inquiries with timestamp",
+        "Inquiries display customer name, phone number, and message",
+        "Admin can mark inquiries as read or resolved"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/admin/InquiryManager.tsx",
+          "operation": "create",
+          "description": "Create inquiry management component within admin dashboard displaying all inquiries from getAllInquiries backend method. Show inquiry details (name, phone, message, timestamp, status) in table or card format with actions to update status or delete."
+        },
+        {
+          "path": "frontend/src/components/admin/InquiryCard.tsx",
+          "operation": "create",
+          "description": "Create inquiry card component to display individual inquiry with name, phone, message, formatted timestamp, and status. Include action buttons to mark as in-progress, resolved, or archived using updateInquiryStatus backend method."
+        },
+        {
+          "path": "frontend/src/hooks/useInquiries.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for inquiry operations: useGetAllInquiries, useUpdateInquiryStatus, useDeleteInquiry. Use getAllInquiries, updateInquiryStatus, deleteInquiry backend methods. Auto-refresh or invalidate after mutations."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Design hero section with wedding-themed background, heading, subheading, and CTA buttons",
+      "acceptanceCriteria": [
+        "Hero section displays a luxurious wedding-themed background",
+        "Heading and subheading are prominently displayed with readable contrast",
+        "'View Collection' button scrolls to product gallery",
+        "'Order on WhatsApp' button opens WhatsApp chat with pre-filled message"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/HeroSection.tsx",
+          "operation": "create",
+          "description": "Create hero section component with background image from frontend/public/assets/generated/hero-banner.dim_1920x800.png. Display heading 'Premium Wedding Gift Packaging for Grand Celebrations' and subheading 'Bulk Orders | Pan India Delivery'. Include two CTA buttons: 'View Collection' (smooth scroll to #products) and 'Order on WhatsApp' (opens whatsapp://send?phone=<business-number>&text=<pre-filled-message>). Apply Maroon and Gold color scheme for text and buttons with proper contrast."
+        },
+        {
+          "path": "frontend/src/components/home/DynamicHeroSection.tsx",
+          "operation": "create",
+          "description": "Create dynamic hero section variant that fetches banners from getAllBanners backend method and displays them with blob-storage component's getDirectURL for image rendering. Include carousel/slider if multiple banners exist. Fall back to static hero-banner.dim_1920x800.png if no banners are configured."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "create",
+          "description": "Create homepage component that composes all home sections in order: DynamicHeroSection (or HeroSection), AboutSection, ProductGallery, WhyChooseUsSection, ContactSection. Ensure proper spacing and flow between sections. This is the main public-facing page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create About Us section highlighting Shree Radha Traders story and values",
+      "acceptanceCriteria": [
+        "About Us section includes compelling copy about Shree Radha Traders",
+        "Section mentions Churu, Rajasthan location",
+        "Content emphasizes trust, experience, and quality"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/AboutSection.tsx",
+          "operation": "create",
+          "description": "Create About Us section component with content describing Shree Radha Traders as a trusted wholesale supplier from Churu, Rajasthan. Emphasize experience, quality focus, and traditional craftsmanship. Use Cream and Soft Pink colors for section background with Maroon headings."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build product gallery with six categories in grid layout with zoom functionality",
+      "acceptanceCriteria": [
+        "Products are organized into six distinct categories",
+        "Gallery displays products in a responsive grid layout",
+        "Clicking a product image triggers zoom/lightbox view",
+        "Each product shows description and pricing",
+        "Categories can be filtered or navigated separately"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/ProductGallery.tsx",
+          "operation": "create",
+          "description": "Create product gallery component that fetches products using getAllProducts backend method and organizes them into categories. Display in responsive grid layout (1 col mobile, 2-3 tablet, 4 desktop). Use blob-storage component's getDirectURL to render product images. Include category filter tabs/buttons for Fancy Potlis, Designer Envelopes, Wedding Pouches, Jute Bags, Return Gifts, Corporate Gifting Options. Verify blob-storage component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/home/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create product card component displaying product image (using blob-storage ExternalBlob.getDirectURL), name, description, and price formatted as currency. Include click handler to open lightbox/modal with larger image. Apply Gold accents for price display."
+        },
+        {
+          "path": "frontend/src/components/home/ProductLightbox.tsx",
+          "operation": "create",
+          "description": "Create lightbox/modal component for zoomed product view triggered by clicking product images. Display full-size product image using blob-storage component's getDirectURL, product details, and close button. Include backdrop click to close."
+        },
+        {
+          "path": "frontend/src/components/home/CategoryFilter.tsx",
+          "operation": "create",
+          "description": "Create category filter component showing six category buttons that filter displayed products. Use getCategories backend method to fetch available categories and ensure all six categories are represented. Apply Maroon and Gold styling for active/inactive states."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create 'Why Choose Us' section with four value propositions",
+      "acceptanceCriteria": [
+        "Section displays four distinct benefit cards or items",
+        "Each benefit is clearly labeled and visually distinct",
+        "Content reinforces trust and value for bulk buyers"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/WhyChooseUsSection.tsx",
+          "operation": "create",
+          "description": "Create Why Choose Us section with four benefit cards: Premium Quality Material (using frontend/public/assets/generated/quality-icon.dim_128x128.png), Wholesale Prices (using frontend/public/assets/generated/wholesale-icon.dim_128x128.png), Fast Delivery (using frontend/public/assets/generated/delivery-icon.dim_128x128.png), and Trusted by Wedding Planners (using frontend/public/assets/generated/trust-icon.dim_128x128.png). Display in responsive grid (1-2 columns mobile, 4 columns desktop) with icons, headings, and short descriptions. Apply Gold accent borders or backgrounds."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Implement contact section with phone, WhatsApp, Instagram links, inquiry form, and Google Map",
+      "acceptanceCriteria": [
+        "Phone number is clickable and initiates call on mobile devices",
+        "WhatsApp button opens direct chat with Shree Radha Traders",
+        "Instagram icon links to company profile",
+        "Inquiry form captures Name, Phone, and Message and submits to backend",
+        "Google Map is embedded showing Churu, Rajasthan",
+        "Form submission is validated and provides user feedback"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/home/ContactSection.tsx",
+          "operation": "create",
+          "description": "Create contact section component with click-to-call phone link (tel:<phone-number>), WhatsApp button (whatsapp://send?phone=<business-number>), Instagram link (https://instagram.com/<username>), embedded Google Map iframe pointing to Churu, Rajasthan, and inquiry form. Display in two-column layout (map + form) on desktop, stacked on mobile. Use Maroon and Gold for section styling."
+        },
+        {
+          "path": "frontend/src/components/home/InquiryForm.tsx",
+          "operation": "create",
+          "description": "Create inquiry form component with fields for Name, Phone, and Message. Include form validation, loading state during submission, and success/error feedback. Call addInquiry backend method on submit. Clear form and show success message after successful submission. Use Gold for submit button with Maroon hover state."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmitInquiry.ts",
+          "operation": "create",
+          "description": "Create React Query mutation hook for submitting inquiries using addInquiry backend method. Handle loading, success, and error states. Return mutation function and state for use in InquiryForm."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Design footer with social media icons, quick links, and copyright text",
+      "acceptanceCriteria": [
+        "Footer displays social media icons with working links",
+        "Quick links navigate to main sections of the website",
+        "Copyright notice is clearly visible"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "create",
+          "description": "Create footer component with three sections: social media icons (WhatsApp using whatsapp://send, Instagram using https://), quick navigation links (Home, About, Products, Contact using anchor links or smooth scroll), and copyright text '© Shree Radha Traders'. Use Maroon background with Gold accents and Cream text for contrast."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Add floating WhatsApp button visible across all pages",
+      "acceptanceCriteria": [
+        "WhatsApp button floats in bottom-right corner on all pages",
+        "Button is always visible while scrolling",
+        "Clicking opens WhatsApp with pre-filled business contact"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/FloatingWhatsAppButton.tsx",
+          "operation": "create",
+          "description": "Create floating WhatsApp button component with fixed positioning (bottom-right, z-index above content). Use WhatsApp icon with circular Gold background. Link opens whatsapp://send?phone=<business-number>&text=<pre-filled-inquiry-message>. Ensure visibility across all scroll positions."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Integrate Header, Footer, and FloatingWhatsAppButton into main App layout. Set up routing with Home page as default route and /admin route protected by ProtectedRoute component leading to AdminDashboard. Include ProfileSetup modal that appears after login if user has no profile (using useGetCallerUserProfile hook pattern from authorization component)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Apply royal color palette (Maroon, Gold, Cream, Soft Pink) throughout website",
+      "acceptanceCriteria": [
+        "Maroon is used as the primary brand color",
+        "Gold accents are used for highlights and CTAs",
+        "Cream and Soft Pink provide balance and elegance",
+        "Overall design feels cohesive, luxurious, and wedding-appropriate",
+        "Color scheme is consistent across all sections"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define CSS custom properties for royal color palette: --color-maroon (primary), --color-gold (accent), --color-cream, --color-soft-pink. Apply base styles for typography, headings, and links using these colors. Ensure traditional yet modern aesthetic with elegant font choices. Add responsive utility classes and ensure all base styles work across breakpoints (mobile-first approach). Test touch-friendly button sizes (min 44px tap targets). Ensure text remains readable at all screen sizes."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom color palette: maroon (primary), gold (accent), cream, softPink. Add these colors to extend.colors so they can be used throughout components as bg-maroon, text-gold, etc. Configure theme to support wedding-appropriate styling."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Ensure full responsiveness for mobile, tablet, and desktop",
+      "acceptanceCriteria": [
+        "Website displays correctly on mobile devices (320px and up)",
+        "Layout adapts smoothly to tablet and desktop screens",
+        "Navigation is touch-friendly on mobile",
+        "All interactive elements are easily accessible on small screens"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "create",
+          "description": "Create responsive header/navigation component with logo/brand name 'Shree Radha Traders', navigation links (Home, About, Products, Contact), and admin login button. Implement mobile hamburger menu for small screens. Use Maroon background with Gold highlights. Include LoginButton component for authentication."
+        },
+        {
+          "path": "frontend/src/components/layout/MobileMenu.tsx",
+          "operation": "create",
+          "description": "Create mobile menu component (hamburger menu) for small screens showing navigation links and admin login. Animate slide-in from side with backdrop. Use Maroon background consistent with header."
+        }
+      ]
+    }
+  ]
+}

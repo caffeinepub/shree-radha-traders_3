@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Luxurious Indian wedding-themed website for Shree Radha Traders, a wedding gift packaging and fancy return gifts business in Churu, Rajasthan. Features admin control panel, product gallery with categories, hero section, about section, contact form, and WhatsApp integration. Design uses royal color palette (Maroon, Gold, Cream, Soft Pink) with traditional yet modern aesthetic.",
+  "architectural_notes": [
+    "Royal color palette: Maroon, Gold, Cream, Soft Pink throughout the site",
+    "Traditional yet modern Indian wedding aesthetic",
+    "Admin dashboard must support multiple concurrent admin users",
+    "Product management system with categories: Potlis, Envelopes, Pouches, Jute Bags, Return Gifts, Corporate Gifts",
+    "WhatsApp integration for both floating button and direct order links",
+    "SEO-optimized structure for wedding gift packaging keywords"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Luxurious Indian wedding-themed hero banner with traditional decorative elements, rich fabrics, and celebration motifs in Maroon, Gold, Cream, and Soft Pink color palette (hero-banner.dim_1920x800.png)\n- Elegant fancy embroidered potli bag in maroon and gold with traditional Indian patterns (potli-product.dim_600x600.png)\n- Designer shagun envelope with gold embellishments and wedding motifs (shagun-envelope.dim_600x600.png)\n- Decorative wedding pouch with traditional Indian embroidery in soft pink and cream (wedding-pouch.dim_600x600.png)\n- Natural jute hand bag with elegant handles and minimal decoration (jute-bag.dim_600x600.png)\n- Premium quality material icon illustration showing fabric texture in gold (quality-icon.dim_128x128.png)\n- Wholesale pricing icon with rupee symbol in maroon (wholesale-icon.dim_128x128.png)\n- Fast delivery icon with vehicle or speed motif in gold (delivery-icon.dim_128x128.png)\n- Trust badge icon with checkmark or seal in maroon and gold (trust-icon.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-comprehensive-admin-authentication-system-supporting-multiple-admin-logins-with-secure-credential-management",
+      "title": "Create a comprehensive admin authentication system supporting multiple admin logins with secure credential management",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-admin-dashboard-with-complete-product-management-capabilities-upload-product-photos-delete-photos-edit-product-descriptions-add-remove-product-categories-and-update-pricing",
+      "title": "Build an admin dashboard with complete product management capabilities: upload product photos, delete photos, edit product descriptions, add/remove product categories, and update pricing",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-admin-functionality-to-edit-homepage-banners-with-image-upload-and-replacement-capabilities",
+      "title": "Implement admin functionality to edit homepage banners with image upload and replacement capabilities",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-inquiry-management-system-to-view-track-and-manage-customer-inquiries-submitted-through-the-contact-form",
+      "title": "Create an admin inquiry management system to view, track, and manage customer inquiries submitted through the contact form",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-hero-section-with-wedding-themed-background-image-heading-premium-wedding-gift-packaging-for-grand-celebrations-subheading-bulk-orders-pan-india-delivery-and-two-cta-buttons-view-collection-and-order-on-whatsapp",
+      "title": "Design a hero section with wedding-themed background image, heading 'Premium Wedding Gift Packaging for Grand Celebrations', subheading 'Bulk Orders | Pan India Delivery', and two CTA buttons: 'View Collection' and 'Order on WhatsApp'",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-about-us-section-featuring-the-story-of-shree-radha-traders-highlighting-their-position-as-a-trusted-wholesale-supplier-from-churu-rajasthan-with-emphasis-on-experience-and-quality-focus",
+      "title": "Create an About Us section featuring the story of Shree Radha Traders, highlighting their position as a trusted wholesale supplier from Churu, Rajasthan, with emphasis on experience and quality focus",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-product-gallery-with-categories-fancy-potlis-designer-envelopes-wedding-pouches-jute-bags-return-gifts-corporate-gifting-options-using-a-grid-layout-with-image-zoom-functionality",
+      "title": "Build a product gallery with categories (Fancy Potlis, Designer Envelopes, Wedding Pouches, Jute Bags, Return Gifts, Corporate Gifting Options) using a grid layout with image zoom functionality",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-why-choose-us-section-highlighting-four-key-value-propositions-premium-quality-material-wholesale-prices-fast-delivery-and-trusted-by-wedding-planners",
+      "title": "Create a 'Why Choose Us' section highlighting four key value propositions: Premium Quality Material, Wholesale Prices, Fast Delivery, and Trusted by Wedding Planners",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-comprehensive-contact-section-with-click-to-call-phone-number-whatsapp-direct-chat-button-instagram-link-inquiry-form-name-phone-message-fields-and-embedded-google-map-showing-churu-rajasthan-location",
+      "title": "Implement a comprehensive contact section with click-to-call phone number, WhatsApp direct chat button, Instagram link, inquiry form (Name, Phone, Message fields), and embedded Google Map showing Churu, Rajasthan location",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-footer-section-with-social-media-icons-whatsapp-instagram-quick-navigation-links-and-copyright-text-shree-radha-traders",
+      "title": "Design a footer section with social media icons (WhatsApp, Instagram), quick navigation links, and copyright text '© Shree Radha Traders'",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-floating-whatsapp-button-that-remains-visible-across-all-pages-and-opens-direct-chat-with-shree-radha-traders-when-clicked",
+      "title": "Add a floating WhatsApp button that remains visible across all pages and opens direct chat with Shree Radha Traders when clicked",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-luxurious-royal-color-palette-throughout-the-website-using-maroon-as-primary-gold-as-accent-and-cream-and-soft-pink-as-complementary-colors-to-create-a-traditional-yet-modern-indian-wedding-aesthetic",
+      "title": "Apply a luxurious royal color palette throughout the website using Maroon as primary, Gold as accent, and Cream and Soft Pink as complementary colors to create a traditional yet modern Indian wedding aesthetic",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-entire-website-is-fully-responsive-and-optimized-for-mobile-tablet-and-desktop-viewing-experiences",
+      "title": "Ensure the entire website is fully responsive and optimized for mobile, tablet, and desktop viewing experiences",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Admin control panel with product/photo/category/pricing/banner/inquiry management",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Multi-admin login system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Hero section with wedding-themed background, headings, and CTA buttons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "About Us section with company story and trust messaging",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Product gallery with categories (Potlis, Envelopes, Pouches, Jute Bags, Return Gifts), grid layout, and zoom feature",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Why Choose Us section highlighting quality, pricing, delivery, and trust",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Contact section with phone, WhatsApp, Instagram, inquiry form, and Google Map",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Footer with social media icons, quick links, and copyright",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "WhatsApp floating button for direct chat",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Mobile responsive design with fast loading and SEO optimization",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Shree Radha Traders",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
